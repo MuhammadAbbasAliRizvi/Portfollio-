@@ -8,12 +8,14 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <!-- link CSS -->
+    <!-- AOS CSS -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <!-- Custom CSS -->
     <link rel="stylesheet" href="./style.css">
 </head>
 <body>
     <!-- Navigation -->
-    <nav class="navbar navbar-expand-lg navbar-dark sticky-top">
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
         <div class="container">
             <a class="navbar-brand" href="#">MUHAMMAD ABBAS</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
@@ -34,6 +36,9 @@
                         <a class="nav-link" href="#education">Education</a>
                     </li>
                     <li class="nav-item">
+                        <a class="nav-link" href="#projects">Works</a>
+                    </li>
+                    <li class="nav-item">
                         <a class="nav-link" href="#contact">Contact</a>
                     </li>
                 </ul>
@@ -44,23 +49,25 @@
     <!-- Hero Section -->
     <section id="home" class="hero-section text-center">
         <div class="container">
-            <img src="./img/IMG_20240616_145025_619-EDIT-EDIT.jpg" alt="Muhammad Abbas" class="profile-img mb-4">
-            <h1 class="display-4 fw-bold">Muhammad Abbas</h1>
-            <h2 class="h3 mb-4">Web Developer | Karachi, Pakistan</h2>
-            <p class="lead mb-4">Building web solutions with modern technologies</p>
-            <a href="#contact" class="btn btn-light btn-lg px-4 me-2">Hire Me</a>
-            <a href="https://github.com/MuhammadAbbasAliRizvi" target="_blank" class="btn btn-outline-light btn-lg px-4">
-                <i class="fab fa-github me-1"></i> GitHub
-            </a>
+            <img src="./img/IMG_20240616_145025_619-EDIT-EDIT.jpg" alt="Muhammad Abbas" class="profile-img mb-4" data-aos="zoom-in" data-aos-duration="800">
+            <h1 class="display-4 fw-bold" data-aos="fade-up" data-aos-delay="200">Muhammad Abbas</h1>
+            <h2 class="h3 mb-4" data-aos="fade-up" data-aos-delay="300">Web Developer | Karachi, Pakistan</h2>
+            <p class="lead mb-4" data-aos="fade-up" data-aos-delay="400">Building web solutions with modern technologies</p>
+            <div data-aos="fade-up" data-aos-delay="500">
+                <a href="#contact" class="btn btn-light btn-lg px-4 me-2">Hire Me</a>
+                <a href="https://github.com/MuhammadAbbasAliRizvi" target="_blank" class="btn btn-outline-light btn-lg px-4">
+                    <i class="fab fa-github me-1"></i> GitHub
+                </a>
+            </div>
         </div>
     </section>
 
     <!-- About Section -->
     <section id="about" class="py-5">
         <div class="container">
-            <h2 class="text-center section-title">About Me</h2>
+            <h2 class="text-center section-title" data-aos="fade-up">About Me</h2>
             <div class="row align-items-center">
-                <div class="col-lg-6">
+                <div class="col-lg-6" data-aos="fade-right">
                     <h3 class="mb-4">Who am I?</h3>
                     <p>I'm a passionate web developer based in Karachi, Pakistan currently pursuing my DAE in CIT (1st year). I specialize in front-end development with skills in HTML5, CSS, and JavaScript.</p>
                     <p>Currently expanding my knowledge in advanced JavaScript, PHP, and React.js to become a full-stack developer. I also have basic knowledge of Adobe Photoshop and Illustrator for design work.</p>
@@ -72,7 +79,7 @@
                         </a>
                     </div>
                 </div>
-                <div class="col-lg-6">
+                <div class="col-lg-6" data-aos="fade-left" data-aos-delay="200">
                     <div class="card shadow-sm mt-4 mt-lg-0">
                         <div class="card-body">
                             <h4 class="card-title mb-4">Personal Info</h4>
@@ -80,14 +87,14 @@
                                 <li class="mb-3"><strong>Name:</strong> Muhammad Abbas</li>
                                 <li class="mb-3"><strong>Location:</strong> Karachi, Pakistan</li>
                                 <li class="mb-3"><strong>Email:</strong> muhammadabbas0321299@gmail.com</li>
-                                <li class="mb-3"><strong>Phone:</strong> 0318-2322363</li>
+                                <li class="mb-3"><strong>Phone:</strong> 0318-2322363 / 03212997059</li>
                                 <li class="mb-3"><strong>Freelance:</strong> Available</li>
                             </ul>
                             <div class="social-icons">
-                                <a href="https://github.com/MuhammadAbbasAliRizvi" target="_blank"><i class="fab fa-github"></i></a>
-                                <a href="#"><i class="fab fa-linkedin"></i></a>
-                                <a href="#"><i class="fab fa-twitter"></i></a>
-                                <a href="#"><i class="fab fa-instagram"></i></a>
+                                <a href="https://github.com/MuhammadAbbasAliRizvi" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                                <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                                <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                                <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
                             </div>
                         </div>
                     </div>
@@ -99,9 +106,9 @@
     <!-- Skills Section -->
     <section id="skills" class="py-5 bg-light">
         <div class="container">
-            <h2 class="text-center section-title">Technical Skills</h2>
+            <h2 class="text-center section-title" data-aos="fade-up">Technical Skills</h2>
             <div class="row">
-                <div class="col-md-6 col-lg-3">
+                <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="100">
                     <div class="card skill-card shadow-sm h-100">
                         <div class="card-body text-center">
                             <i class="fab fa-html5 text-danger mb-3" style="font-size: 50px;"></i>
@@ -111,7 +118,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-md-6 col-lg-3">
+                <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="200">
                     <div class="card skill-card shadow-sm h-100">
                         <div class="card-body text-center">
                             <i class="fab fa-css3-alt text-primary mb-3" style="font-size: 50px;"></i>
@@ -121,7 +128,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-md-6 col-lg-3">
+                <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="300">
                     <div class="card skill-card shadow-sm h-100">
                         <div class="card-body text-center">
                             <i class="fab fa-js-square text-warning mb-3" style="font-size: 50px;"></i>
@@ -131,7 +138,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-md-6 col-lg-3">
+                <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="400">
                     <div class="card skill-card shadow-sm h-100">
                         <div class="card-body text-center">
                             <i class="fab fa-php text-info mb-3" style="font-size: 50px;"></i>
@@ -143,23 +150,23 @@
                 </div>
             </div>
             
-            <div class="mt-5">
+            <div class="mt-5" data-aos="fade-up">
                 <h3 class="text-center mb-4">Skill Proficiency</h3>
                 <div class="row">
                     <div class="col-md-6">
-                        <div class="mb-3">
+                        <div class="mb-3" data-aos="fade-right" data-aos-delay="100">
                             <h6>HTML5 <span class="float-end">90%</span></h6>
                             <div class="progress">
                                 <div class="progress-bar bg-danger" style="width: 90%"></div>
                             </div>
                         </div>
-                        <div class="mb-3">
+                        <div class="mb-3" data-aos="fade-right" data-aos-delay="200">
                             <h6>CSS <span class="float-end">85%</span></h6>
                             <div class="progress">
                                 <div class="progress-bar bg-primary" style="width: 85%"></div>
                             </div>
                         </div>
-                        <div class="mb-3">
+                        <div class="mb-3" data-aos="fade-right" data-aos-delay="300">
                             <h6>Basic JavaScript <span class="float-end">75%</span></h6>
                             <div class="progress">
                                 <div class="progress-bar bg-warning" style="width: 75%"></div>
@@ -167,19 +174,19 @@
                         </div>
                     </div>
                     <div class="col-md-6">
-                        <div class="mb-3">
+                        <div class="mb-3" data-aos="fade-left" data-aos-delay="100">
                             <h6>Advanced JavaScript <span class="float-end">40%</span></h6>
                             <div class="progress">
                                 <div class="progress-bar bg-warning" style="width: 40%"></div>
                             </div>
                         </div>
-                        <div class="mb-3">
+                        <div class="mb-3" data-aos="fade-left" data-aos-delay="200">
                             <h6>React.js <span class="float-end">30%</span></h6>
                             <div class="progress">
                                 <div class="progress-bar bg-info" style="width: 30%"></div>
                             </div>
                         </div>
-                        <div class="mb-3">
+                        <div class="mb-3" data-aos="fade-left" data-aos-delay="300">
                             <h6>PHP <span class="float-end">35%</span></h6>
                             <div class="progress">
                                 <div class="progress-bar bg-info" style="width: 35%"></div>
@@ -188,11 +195,11 @@
                     </div>
                 </div>
                 
-                <div class="mt-4">
+                <div class="mt-4" data-aos="fade-up">
                     <h4 class="text-center mb-3">Design Skills</h4>
                     <div class="row">
                         <div class="col-md-6">
-                            <div class="mb-3">
+                            <div class="mb-3" data-aos="fade-right" data-aos-delay="100">
                                 <h6>Adobe Photoshop <span class="float-end">65%</span></h6>
                                 <div class="progress">
                                     <div class="progress-bar" style="width: 65%; background-color: #31a8ff;"></div>
@@ -200,7 +207,7 @@
                             </div>
                         </div>
                         <div class="col-md-6">
-                            <div class="mb-3">
+                            <div class="mb-3" data-aos="fade-left" data-aos-delay="100">
                                 <h6>Adobe Illustrator <span class="float-end">50%</span></h6>
                                 <div class="progress">
                                     <div class="progress-bar" style="width: 50%; background-color: #ff9a00;"></div>
@@ -216,10 +223,10 @@
     <!-- Education Section -->
     <section id="education" class="py-5">
         <div class="container">
-            <h2 class="text-center section-title">Education</h2>
+            <h2 class="text-center section-title" data-aos="fade-up">Education</h2>
             <div class="row justify-content-center">
                 <div class="col-lg-8">
-                    <div class="card shadow-sm">
+                    <div class="card shadow-sm" data-aos="zoom-in">
                         <div class="card-body">
                             <div class="d-flex">
                                 <div class="flex-shrink-0">
@@ -235,7 +242,7 @@
                         </div>
                     </div>
                     
-                    <div class="card shadow-sm mt-4">
+                    <div class="card shadow-sm mt-4" data-aos="zoom-in" data-aos-delay="200">
                         <div class="card-body">
                             <div class="d-flex">
                                 <div class="flex-shrink-0">
@@ -254,49 +261,50 @@
             </div>
         </div>
     </section>
-  <!-- Projects Section -->
+
+    <!-- Projects Section -->
     <section id="projects" class="py-5">
         <div class="container">
-            <h2 class="text-center section-title">Featured Projects</h2>
+            <h2 class="text-center section-title" data-aos="fade-up">Featured Projects</h2>
             <div class="row">
-                <div class="col-lg-4 col-md-6">
+                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
                     <div class="card project-card h-100">
-                        <img src="./img/6f24d67c-9e86-4456-aac3-3526efe15eb5-500x500.jpeg" class="card-img-top" alt="Project 1">
+                        <img src="./img/6f24d67c-9e86-4456-aac3-3526efe15eb5-500x500.jpeg" class="card-img-top" alt="Digital Clock Project">
                         <div class="card-body">
-                            <h5 class="card-title">Digital Clock </h5>
-                            <p class="card-text">A Digital Clock with fuctioner with js.</p>
+                            <h5 class="card-title">Digital Clock</h5>
+                            <p class="card-text">A Digital Clock with functionality using JavaScript.</p>
                             <div class="mb-3">
-                                <span class="badge bg-primary me-1">html</span>
+                                <span class="badge bg-primary me-1">HTML</span>
                                 <span class="badge bg-primary me-1">CSS</span>
-                                <span class="badge bg-primary">Java Script</span>
+                                <span class="badge bg-primary">JavaScript</span>
                             </div>
                             <a href="https://muhammadabbasalirizvi.github.io/digital-clock/" target="_blank" class="btn btn-outline-primary">View Project</a>
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-4 col-md-6">
+                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
                     <div class="card project-card h-100">
-                        <img src="./img/abc-english-letters-logo-learning-school-courses-icon-kids-child-language-classe-flat-cartoon_101884-1372.avif" class="card-img-top" alt="Project 2">
+                        <img src="./img/flat-calculator-children-education-600nw-2141131775.webp" class="card-img-top" alt="Calculator Project">
                         <div class="card-body">
-                            <h5 class="card-title">Alphabet ABC Book</h5>
-                            <p class="card-text">A Book of Kids</p>
+                            <h5 class="card-title">Calculator</h5>
+                            <p class="card-text">Animated Calculator with full functionality.</p>
                             <div class="mb-3">
                                 <span class="badge bg-primary me-1">HTML</span>
                                 <span class="badge bg-primary me-1">CSS</span>
-                                
+                                <span class="badge bg-primary">JavaScript</span>
                             </div>
-                            <a href="https://muhammadabbasalirizvi.github.io/abc-book/" target="_blank" class="btn btn-outline-primary">View Project</a>
+                            <a href="https://muhammadabbasalirizvi.github.io/calculate-repo/" target="_blank" class="btn btn-outline-primary">View Project</a>
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-4 col-md-6">
+                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="300">
                     <div class="card project-card h-100">
-                        <img src="./img/images.png" class="card-img-top" alt="Project 3">
+                        <img src="./img/images.png" class="card-img-top" alt="User Data Project">
                         <div class="card-body">
                             <h5 class="card-title">Data User Info</h5>
-                            <p class="card-text">Data of User Info</p>
+                            <p class="card-text">Interactive user data display application.</p>
                             <div class="mb-3">
-                                <span class="badge bg-primary me-1">Basic js</span>
+                                <span class="badge bg-primary me-1">JavaScript</span>
                                 <span class="badge bg-primary me-1">HTML</span>
                                 <span class="badge bg-primary">CSS</span>
                             </div>
@@ -305,17 +313,18 @@
                     </div>
                 </div>
             </div>
-            <div class="text-center mt-4">
+            <div class="text-center mt-4" data-aos="fade-up" data-aos-delay="400">
                 <a href="https://github.com/MuhammadAbbasAliRizvi" target="_blank" class="btn btn-primary">View All Projects</a>
             </div>
         </div>
     </section>
+
     <!-- Contact Section -->
     <section id="contact" class="py-5 bg-light">
         <div class="container">
-            <h2 class="text-center section-title">Get In Touch</h2>
+            <h2 class="text-center section-title" data-aos="fade-up">Get In Touch</h2>
             <div class="row">
-                <div class="col-lg-6">
+                <div class="col-lg-6" data-aos="fade-right">
                     <div class="contact-info mb-4">
                         <h4 class="mb-4">Contact Information</h4>
                         <p><i class="fas fa-map-marker-alt"></i> Karachi, Pakistan</p>
@@ -323,15 +332,15 @@
                         <p><i class="fas fa-phone"></i> 0318-2322363</p>
                         <p><i class="fas fa-link"></i> <a href="https://github.com/MuhammadAbbasAliRizvi" target="_blank">github.com/MuhammadAbbasAliRizvi</a></p>
                         <div class="social-icons mt-4">
-                            <a href="https://github.com/MuhammadAbbasAliRizvi" target="_blank"><i class="fab fa-github"></i></a>
-                            <a href="#"><i class="fab fa-linkedin"></i></a>
-                            <a href="#"><i class="fab fa-twitter"></i></a>
-                            <a href="#"><i class="fab fa-instagram"></i></a>
+                            <a href="https://github.com/MuhammadAbbasAliRizvi" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                            <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                            <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                            <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-6">
-                    <form>
+                <div class="col-lg-6" data-aos="fade-left" data-aos-delay="200">
+                    <form id="contactForm">
                         <div class="mb-3">
                             <input type="text" class="form-control" placeholder="Your Name" required>
                         </div>
@@ -352,19 +361,64 @@
     </section>
 
     <!-- Footer -->
-    <footer class="text-center">
+    <footer class="text-center py-4">
         <div class="container">
-            <p>&copy; 2023 Muhammad Abbas. All rights reserved.</p>
+            <p>&copy; <span id="currentYear"></span> Muhammad Abbas. All rights reserved.</p>
             <div class="social-icons">
-                <a href="https://github.com/MuhammadAbbasAliRizvi" target="_blank"><i class="fab fa-github"></i></a>
-                <a href="#"><i class="fab fa-linkedin"></i></a>
-                <a href="#"><i class="fab fa-twitter"></i></a>
-                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="https://github.com/MuhammadAbbasAliRizvi" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
             </div>
         </div>
     </footer>
 
+    <!-- Back to Top Button -->
+    <a href="#" class="back-to-top" aria-label="Back to top"><i class="fas fa-arrow-up"></i></a>
+
     <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- AOS JS -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <!-- Custom JS -->
+    <script>
+        // Initialize AOS
+        AOS.init({
+            duration: 800,
+            easing: 'ease-in-out',
+            once: true,
+            mirror: false
+        });
+
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Update copyright year automatically
+        document.getElementById('currentYear').textContent = new Date().getFullYear();
+
+        // Back to top button
+        const backToTopButton = document.querySelector('.back-to-top');
+        window.addEventListener('scroll', () => {
+            if (window.pageYOffset > 300) {
+                backToTopButton.classList.add('show');
+            } else {
+                backToTopButton.classList.remove('show');
+            }
+        });
+
+        // Form submission (placeholder functionality)
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Thank you for your message! I will get back to you soon.');
+            this.reset();
+        });
+    </script>
 </body>
 </html>
