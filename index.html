@@ -8,10 +8,620 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <!-- AOS CSS -->
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-    <!-- Custom CSS -->
-    <link rel="stylesheet" href="./style.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="./style.css">
+    <!-- <style>
+        :root {
+            --primary: #4361ee;
+            --secondary: #3f37c9;
+            --accent: #f72585;
+            --light: #f8f9fa;
+            --dark: #121826;
+            --text: #2d3748;
+            --card-bg: rgba(255, 255, 255, 0.85);
+            --transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+
+        .dark-theme {
+            --primary: #4895ef;
+            --secondary: #4361ee;
+            --accent: #f72585;
+            --light: #1e293b;
+            --dark: #0f172a;
+            --text: #e2e8f0;
+            --card-bg: rgba(30, 41, 59, 0.85);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            color: var(--text);
+            background: linear-gradient(135deg, var(--light), #e2e8f0);
+            overflow-x: hidden;
+            padding-top: 70px;
+            scroll-behavior: smooth;
+        }
+
+        .dark-theme body {
+            background: linear-gradient(135deg, var(--dark), #0f172a);
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Poppins', sans-serif;
+            font-weight: 700;
+        }
+
+        /* Navbar - Glassmorphism Style */
+        .navbar {
+            background: rgba(255, 255, 255, 0.08);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            padding: 15px 0;
+            transition: all 0.4s ease;
+        }
+
+        .navbar.scrolled {
+            background: rgba(30, 41, 59, 0.9);
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+            padding: 10px 0;
+        }
+
+        .navbar-brand {
+            font-weight: 800;
+            font-size: 1.8rem;
+            background: linear-gradient(90deg, var(--primary), var(--accent));
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .nav-link {
+            font-weight: 500;
+            margin: 0 10px;
+            position: relative;
+            color: var(--text);
+            transition: var(--transition);
+        }
+
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: linear-gradient(90deg, var(--primary), var(--accent));
+            transition: var(--transition);
+        }
+
+        .nav-link:hover,
+        .nav-link.active {
+            color: var(--primary);
+        }
+
+        .nav-link:hover::after,
+        .nav-link.active::after {
+            width: 100%;
+        }
+
+        .theme-toggle {
+            background: rgba(255, 255, 255, 0.1);
+            border: none;
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--text);
+            cursor: pointer;
+            transition: var(--transition);
+            margin-left: 15px;
+        }
+
+        .theme-toggle:hover {
+            background: rgba(255, 255, 255, 0.2);
+            transform: rotate(15deg);
+        }
+
+        /* Hero Section with Animated Blobs */
+        .hero-section {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+            padding: 100px 0;
+        }
+
+        .blob {
+            position: absolute;
+            border-radius: 50%;
+            filter: blur(60px);
+            z-index: -1;
+            opacity: 0.7;
+        }
+
+        .blob-1 {
+            width: 500px;
+            height: 500px;
+            background: linear-gradient(120deg, var(--primary), var(--accent));
+            top: -200px;
+            left: -100px;
+            animation: float 15s infinite ease-in-out;
+        }
+
+        .blob-2 {
+            width: 400px;
+            height: 400px;
+            background: linear-gradient(120deg, var(--accent), var(--primary));
+            bottom: -150px;
+            right: -100px;
+            animation: float 18s infinite ease-in-out;
+            animation-delay: 2s;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translate(0, 0); }
+            25% { transform: translate(20px, 40px); }
+            50% { transform: translate(0, 80px); }
+            75% { transform: translate(-20px, 40px); }
+        }
+
+        .profile-img {
+            width: 220px;
+            height: 220px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 5px solid rgba(255, 255, 255, 0.2);
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.2);
+            transition: var(--transition);
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(5px);
+        }
+
+        .profile-img:hover {
+            transform: scale(1.05);
+            border-color: rgba(255, 255, 255, 0.4);
+        }
+
+        .hero-content h1 {
+            font-size: 4rem;
+            font-weight: 800;
+            margin-bottom: 20px;
+            background: linear-gradient(90deg, var(--primary), var(--accent));
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .hero-content h2 {
+            font-size: 1.8rem;
+            margin-bottom: 30px;
+            color: var(--text);
+        }
+
+        .hero-content p {
+            font-size: 1.2rem;
+            max-width: 600px;
+            margin: 0 auto 40px;
+        }
+
+        .btn-primary {
+            background: linear-gradient(90deg, var(--primary), var(--secondary));
+            border: none;
+            padding: 12px 30px;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: var(--transition);
+            box-shadow: 0 10px 20px rgba(67, 97, 238, 0.3);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(67, 97, 238, 0.4);
+        }
+
+        .btn-outline-light {
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            color: white;
+            background: transparent;
+            transition: var(--transition);
+        }
+
+        .btn-outline-light:hover {
+            background: rgba(255, 255, 255, 0.1);
+            transform: translateY(-5px);
+        }
+
+        /* Section Styling */
+        .section {
+            padding: 100px 0;
+            position: relative;
+        }
+
+        .section-title {
+            position: relative;
+            margin-bottom: 70px;
+            text-align: center;
+        }
+
+        .section-title h2 {
+            font-size: 2.8rem;
+            font-weight: 800;
+            display: inline-block;
+            background: linear-gradient(90deg, var(--primary), var(--accent));
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background: linear-gradient(90deg, var(--primary), var(--accent));
+            border-radius: 10px;
+        }
+
+        /* About Section */
+        .about-card {
+            background: var(--card-bg);
+            border-radius: 20px;
+            padding: 40px;
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.1);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: var(--transition);
+        }
+
+        .about-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 25px 60px rgba(0, 0, 0, 0.15);
+        }
+
+        .personal-info {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 15px;
+            padding: 25px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .social-icons a {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.1);
+            color: var(--text);
+            font-size: 20px;
+            margin: 0 8px;
+            transition: var(--transition);
+            backdrop-filter: blur(5px);
+        }
+
+        .social-icons a:hover {
+            background: linear-gradient(90deg, var(--primary), var(--accent));
+            color: white;
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(67, 97, 238, 0.3);
+        }
+
+        /* Skills Section with Circular Progress */
+        .skills-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 30px;
+        }
+
+        .skill-card {
+            background: var(--card-bg);
+            border-radius: 20px;
+            padding: 30px;
+            text-align: center;
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: var(--transition);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .skill-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.15);
+        }
+
+        .skill-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background: linear-gradient(90deg, var(--primary), var(--accent));
+        }
+
+        .circular-progress {
+            position: relative;
+            width: 150px;
+            height: 150px;
+            margin: 0 auto 20px;
+        }
+
+        .circular-progress svg {
+            width: 150px;
+            height: 150px;
+            transform: rotate(-90deg);
+        }
+
+        .circular-progress circle {
+            fill: none;
+            stroke-width: 10;
+            stroke-linecap: round;
+        }
+
+        .circular-progress .bg {
+            stroke: rgba(67, 97, 238, 0.1);
+        }
+
+        .circular-progress .progress {
+            stroke: var(--primary);
+            stroke-dasharray: 440;
+            stroke-dashoffset: 440;
+            transition: stroke-dashoffset 1.5s ease;
+        }
+
+        .skill-value {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--primary);
+        }
+
+        /* Project Cards with Tilt Effect */
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 30px;
+        }
+
+        .project-card {
+            background: var(--card-bg);
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.1);
+            transition: var(--transition);
+            transform-style: preserve-3d;
+            position: relative;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .project-card:hover {
+            transform: translateY(-15px);
+            box-shadow: 0 30px 60px rgba(0, 0, 0, 0.2);
+        }
+
+        .project-img {
+            height: 220px;
+            width: 100%;
+            object-fit: cover;
+            transition: var(--transition);
+        }
+
+        .project-card:hover .project-img {
+            transform: scale(1.05);
+        }
+
+        .project-content {
+            padding: 25px;
+        }
+
+        .project-title {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            color: var(--primary);
+        }
+
+        .tech-badge {
+            display: inline-block;
+            background: rgba(67, 97, 238, 0.1);
+            color: var(--primary);
+            padding: 5px 15px;
+            border-radius: 50px;
+            font-size: 0.9rem;
+            margin-right: 8px;
+            margin-bottom: 15px;
+            transition: var(--transition);
+        }
+
+        .tech-badge:hover {
+            background: var(--primary);
+            color: white;
+        }
+
+        /* Contact Section */
+        .contact-card {
+            background: var(--card-bg);
+            border-radius: 20px;
+            padding: 40px;
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.1);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .contact-info p {
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+        }
+
+        .contact-info i {
+            width: 40px;
+            height: 40px;
+            background: rgba(67, 97, 238, 0.1);
+            color: var(--primary);
+            border-radius: 50%;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 15px;
+            transition: var(--transition);
+        }
+
+        .contact-info p:hover i {
+            background: var(--primary);
+            color: white;
+        }
+
+        .form-control {
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            color: var(--text);
+            padding: 15px;
+            border-radius: 12px;
+            margin-bottom: 20px;
+            transition: var(--transition);
+        }
+
+        .form-control:focus {
+            background: rgba(255, 255, 255, 0.15);
+            border-color: var(--primary);
+            box-shadow: 0 0 0 0.25rem rgba(67, 97, 238, 0.25);
+            color: var(--text);
+        }
+
+        /* Footer */
+        footer {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+            padding: 40px 0 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .footer-content {
+            text-align: center;
+            padding-bottom: 30px;
+        }
+
+        .back-to-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(90deg, var(--primary), var(--accent));
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 20px;
+            opacity: 0;
+            visibility: hidden;
+            transition: var(--transition);
+            z-index: 100;
+            text-decoration: none;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .back-to-top.show {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .back-to-top:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+        }
+
+        /* Animations */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .animate {
+            animation: fadeIn 0.8s ease forwards;
+        }
+
+        .delay-1 { animation-delay: 0.1s; }
+        .delay-2 { animation-delay: 0.2s; }
+        .delay-3 { animation-delay: 0.3s; }
+        .delay-4 { animation-delay: 0.4s; }
+        .delay-5 { animation-delay: 0.5s; }
+
+        /* Responsive Design */
+        @media (max-width: 992px) {
+            .hero-content h1 {
+                font-size: 3rem;
+            }
+            
+            .section-title h2 {
+                font-size: 2.3rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .hero-section {
+                padding: 80px 0;
+            }
+            
+            .hero-content h1 {
+                font-size: 2.5rem;
+            }
+            
+            .hero-content h2 {
+                font-size: 1.5rem;
+            }
+            
+            .profile-img {
+                width: 180px;
+                height: 180px;
+            }
+            
+            .section {
+                padding: 70px 0;
+            }
+            
+            .projects-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .navbar-brand {
+                font-size: 1.5rem;
+            }
+            
+            .hero-content h1 {
+                font-size: 2rem;
+            }
+            
+            .section-title h2 {
+                font-size: 2rem;
+            }
+        } -->
+    </style>
 </head>
 <body>
     <!-- Navigation -->
@@ -36,10 +646,15 @@
                         <a class="nav-link" href="#education">Education</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#projects">Works</a>
+                        <a class="nav-link" href="#projects">Projects</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#contact">Contact</a>
+                    </li>
+                    <li class="nav-item">
+                        <button class="theme-toggle" id="themeToggle">
+                            <i class="fas fa-moon"></i>
+                        </button>
                     </li>
                 </ul>
             </div>
@@ -48,41 +663,55 @@
 
     <!-- Hero Section -->
     <section id="home" class="hero-section text-center">
+        <div class="blob blob-1"></div>
+        <div class="blob blob-2"></div>
+        
         <div class="container">
-            <img src="./img/IMG_20240616_145025_619-EDIT-EDIT.jpg" alt="Muhammad Abbas" class="profile-img mb-4" data-aos="zoom-in" data-aos-duration="800">
-            <h1 class="display-4 fw-bold" data-aos="fade-up" data-aos-delay="200">Muhammad Abbas</h1>
-            <h2 class="h3 mb-4" data-aos="fade-up" data-aos-delay="300">Web Developer | Karachi, Pakistan</h2>
-            <p class="lead mb-4" data-aos="fade-up" data-aos-delay="400">Building web solutions with modern technologies</p>
-            <div data-aos="fade-up" data-aos-delay="500">
-                <a href="#contact" class="btn btn-light btn-lg px-4 me-2">Hire Me</a>
-                <a href="https://github.com/MuhammadAbbasAliRizvi" target="_blank" class="btn btn-outline-light btn-lg px-4">
-                    <i class="fab fa-github me-1"></i> GitHub
-                </a>
+            <div class="row justify-content-center">
+                <div class="col-lg-8">
+                    <img src="./img/ChatGPT Image Jul 24, 2025, 01_31_02 AM.png" alt="Muhammad Abbas" class="profile-img mb-5 animate">
+                    <div class="hero-content">
+                        <h1>Muhammad Abbas</h1>
+                        <h2>Web Developer | Karachi, Pakistan</h2>
+                        <p class="mb-4">Building innovative web solutions with cutting-edge technologies and creative design approaches</p>
+                        <div>
+                            <a href="#contact" class="btn btn-primary btn-lg px-4 me-3 animate delay-1">Hire Me</a>
+                            <a href="https://github.com/MuhammadAbbasAliRizvi" target="_blank" class="btn btn-outline-light btn-lg px-4 animate delay-2">
+                                <i class="fab fa-github me-2"></i> GitHub Profile
+                            </a>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
 
     <!-- About Section -->
-    <section id="about" class="py-5">
+    <section id="about" class="section">
         <div class="container">
-            <h2 class="text-center section-title" data-aos="fade-up">About Me</h2>
+            <div class="section-title animate">
+                <h2>About Me</h2>
+            </div>
+            
             <div class="row align-items-center">
-                <div class="col-lg-6" data-aos="fade-right">
-                    <h3 class="mb-4">Who am I?</h3>
-                    <p>I'm a passionate web developer based in Karachi, Pakistan currently pursuing my DAE in CIT (1st year). I specialize in front-end development with skills in HTML5, CSS, and JavaScript.</p>
-                    <p>Currently expanding my knowledge in advanced JavaScript, PHP, and React.js to become a full-stack developer. I also have basic knowledge of Adobe Photoshop and Illustrator for design work.</p>
-                    <p>When I'm not coding, I enjoy learning new technologies, contributing to open-source projects, and working on personal projects to enhance my skills.</p>
-                    <div class="mt-4">
-                        <a href="#contact" class="btn btn-primary me-2">Contact Me</a>
-                        <a href="https://github.com/MuhammadAbbasAliRizvi" target="_blank" class="btn btn-outline-primary">
-                            <i class="fab fa-github me-1"></i> GitHub Profile
-                        </a>
+                <div class="col-lg-6 mb-5 mb-lg-0">
+                    <div class="about-card animate delay-1">
+                        <h3 class="mb-4">Who am I?</h3>
+                        <p>I'm a passionate web developer based in Karachi, Pakistan currently pursuing my DAE in CIT (1st year). I specialize in front-end development with expertise in HTML5, CSS, and JavaScript.</p>
+                        <p>Currently expanding my knowledge in advanced JavaScript, PHP, and React.js to become a full-stack developer. I also have foundational skills in Adobe Photoshop and Illustrator for design work.</p>
+                        <p>When I'm not coding, I enjoy exploring new technologies, contributing to open-source projects, and creating personal projects to enhance my skills.</p>
+                        <div class="mt-4">
+                            <a href="#contact" class="btn btn-primary me-3">Contact Me</a>
+                            <a href="https://github.com/MuhammadAbbasAliRizvi" target="_blank" class="btn btn-outline-primary">
+                                <i class="fab fa-github me-2"></i> GitHub Profile
+                            </a>
+                        </div>
                     </div>
                 </div>
-                <div class="col-lg-6" data-aos="fade-left" data-aos-delay="200">
-                    <div class="card shadow-sm mt-4 mt-lg-0">
-                        <div class="card-body">
-                            <h4 class="card-title mb-4">Personal Info</h4>
+                <div class="col-lg-6">
+                    <div class="about-card animate delay-2">
+                        <div class="personal-info">
+                            <h4 class="mb-4">Personal Information</h4>
                             <ul class="list-unstyled">
                                 <li class="mb-3"><strong>Name:</strong> Muhammad Abbas</li>
                                 <li class="mb-3"><strong>Location:</strong> Karachi, Pakistan</li>
@@ -90,9 +719,9 @@
                                 <li class="mb-3"><strong>Phone:</strong> 0318-2322363 / 03212997059</li>
                                 <li class="mb-3"><strong>Freelance:</strong> Available</li>
                             </ul>
-                            <div class="social-icons">
+                            <div class="social-icons mt-4">
                                 <a href="https://github.com/MuhammadAbbasAliRizvi" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
-                                <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                                <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
                                 <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
                                 <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
                             </div>
@@ -104,156 +733,113 @@
     </section>
 
     <!-- Skills Section -->
-    <section id="skills" class="py-5 bg-light">
+    <section id="skills" class="section bg-light">
         <div class="container">
-            <h2 class="text-center section-title" data-aos="fade-up">Technical Skills</h2>
-            <div class="row">
-                <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="100">
-                    <div class="card skill-card shadow-sm h-100">
-                        <div class="card-body text-center">
-                            <i class="fab fa-html5 text-danger mb-3" style="font-size: 50px;"></i>
-                            <h5 class="card-title">HTML5</h5>
-                            <p class="card-text">Semantic HTML, Forms, Accessibility</p>
-                            <span class="badge bg-success">Proficient</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="200">
-                    <div class="card skill-card shadow-sm h-100">
-                        <div class="card-body text-center">
-                            <i class="fab fa-css3-alt text-primary mb-3" style="font-size: 50px;"></i>
-                            <h5 class="card-title">CSS</h5>
-                            <p class="card-text">Flexbox, Grid, Responsive Design</p>
-                            <span class="badge bg-success">Proficient</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="300">
-                    <div class="card skill-card shadow-sm h-100">
-                        <div class="card-body text-center">
-                            <i class="fab fa-js-square text-warning mb-3" style="font-size: 50px;"></i>
-                            <h5 class="card-title">JavaScript</h5>
-                            <p class="card-text">DOM Manipulation, ES6+ Features</p>
-                            <span class="badge bg-primary">Intermediate</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="400">
-                    <div class="card skill-card shadow-sm h-100">
-                        <div class="card-body text-center">
-                            <i class="fab fa-php text-info mb-3" style="font-size: 50px;"></i>
-                            <h5 class="card-title">PHP</h5>
-                            <p class="card-text">Basic Backend Development</p>
-                            <span class="badge learning-badge">Learning</span>
-                        </div>
-                    </div>
-                </div>
+            <div class="section-title animate">
+                <h2>Technical Skills</h2>
             </div>
             
-            <div class="mt-5" data-aos="fade-up">
-                <h3 class="text-center mb-4">Skill Proficiency</h3>
-                <div class="row">
-                    <div class="col-md-6">
-                        <div class="mb-3" data-aos="fade-right" data-aos-delay="100">
-                            <h6>HTML5 <span class="float-end">90%</span></h6>
-                            <div class="progress">
-                                <div class="progress-bar bg-danger" style="width: 90%"></div>
-                            </div>
-                        </div>
-                        <div class="mb-3" data-aos="fade-right" data-aos-delay="200">
-                            <h6>CSS <span class="float-end">85%</span></h6>
-                            <div class="progress">
-                                <div class="progress-bar bg-primary" style="width: 85%"></div>
-                            </div>
-                        </div>
-                        <div class="mb-3" data-aos="fade-right" data-aos-delay="300">
-                            <h6>Basic JavaScript <span class="float-end">75%</span></h6>
-                            <div class="progress">
-                                <div class="progress-bar bg-warning" style="width: 75%"></div>
-                            </div>
-                        </div>
+            <div class="skills-container">
+                <!-- HTML5 Skill -->
+                <div class="skill-card animate delay-1">
+                    <div class="circular-progress">
+                        <svg>
+                            <circle class="bg" cx="75" cy="75" r="70"></circle>
+                            <circle class="progress" cx="75" cy="75" r="70" data-value="90"></circle>
+                        </svg>
+                        <div class="skill-value">90%</div>
                     </div>
-                    <div class="col-md-6">
-                        <div class="mb-3" data-aos="fade-left" data-aos-delay="100">
-                            <h6>Advanced JavaScript <span class="float-end">40%</span></h6>
-                            <div class="progress">
-                                <div class="progress-bar bg-warning" style="width: 40%"></div>
-                            </div>
-                        </div>
-                        <div class="mb-3" data-aos="fade-left" data-aos-delay="200">
-                            <h6>React.js <span class="float-end">30%</span></h6>
-                            <div class="progress">
-                                <div class="progress-bar bg-info" style="width: 30%"></div>
-                            </div>
-                        </div>
-                        <div class="mb-3" data-aos="fade-left" data-aos-delay="300">
-                            <h6>PHP <span class="float-end">35%</span></h6>
-                            <div class="progress">
-                                <div class="progress-bar bg-info" style="width: 35%"></div>
-                            </div>
-                        </div>
-                    </div>
+                    <h4 class="mb-2">HTML5</h4>
+                    <p>Semantic HTML, Forms, Accessibility</p>
                 </div>
                 
-                <div class="mt-4" data-aos="fade-up">
-                    <h4 class="text-center mb-3">Design Skills</h4>
-                    <div class="row">
-                        <div class="col-md-6">
-                            <div class="mb-3" data-aos="fade-right" data-aos-delay="100">
-                                <h6>Adobe Photoshop <span class="float-end">65%</span></h6>
-                                <div class="progress">
-                                    <div class="progress-bar" style="width: 65%; background-color: #31a8ff;"></div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-6">
-                            <div class="mb-3" data-aos="fade-left" data-aos-delay="100">
-                                <h6>Adobe Illustrator <span class="float-end">50%</span></h6>
-                                <div class="progress">
-                                    <div class="progress-bar" style="width: 50%; background-color: #ff9a00;"></div>
-                                </div>
-                            </div>
-                        </div>
+                <!-- CSS Skill -->
+                <div class="skill-card animate delay-2">
+                    <div class="circular-progress">
+                        <svg>
+                            <circle class="bg" cx="75" cy="75" r="70"></circle>
+                            <circle class="progress" cx="75" cy="75" r="70" data-value="85"></circle>
+                        </svg>
+                        <div class="skill-value">85%</div>
                     </div>
+                    <h4 class="mb-2">CSS</h4>
+                    <p>Flexbox, Grid, Responsive Design</p>
+                </div>
+                
+                <!-- JavaScript Skill -->
+                <div class="skill-card animate delay-3">
+                    <div class="circular-progress">
+                        <svg>
+                            <circle class="bg" cx="75" cy="75" r="70"></circle>
+                            <circle class="progress" cx="75" cy="75" r="70" data-value="75"></circle>
+                        </svg>
+                        <div class="skill-value">75%</div>
+                    </div>
+                    <h4 class="mb-2">JavaScript</h4>
+                    <p>DOM Manipulation, ES6+ Features</p>
+                </div>
+                <!-- Fire base Skill -->
+                <div class="skill-card animate delay-1">
+                    <div class="circular-progress">
+                        <svg>
+                            <circle class="bg" cx="75" cy="75" r="70"></circle>
+                            <circle class="progress" cx="75" cy="75" r="70" data-value="90"></circle>
+                        </svg>
+                        <div class="skill-value">90%</div>
+                    </div>
+                    <h4 class="mb-2">Fire Base</h4>
+                    <p>Auth, Firestore, Hosting</p>
+                </div>
+                
+                <!-- PHP Skill -->
+                <div class="skill-card animate delay-4">
+                    <div class="circular-progress">
+                        <svg>
+                            <circle class="bg" cx="75" cy="75" r="70"></circle>
+                            <circle class="progress" cx="75" cy="75" r="70" data-value="35"></circle>
+                        </svg>
+                        <div class="skill-value">35%</div>
+                    </div>
+                    <h4 class="mb-2">PHP</h4>
+                    <p>Basic Backend Development</p>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Education Section -->
-    <section id="education" class="py-5">
+    <section id="education" class="section">
         <div class="container">
-            <h2 class="text-center section-title" data-aos="fade-up">Education</h2>
+            <div class="section-title animate">
+                <h2>Education</h2>
+            </div>
+            
             <div class="row justify-content-center">
                 <div class="col-lg-8">
-                    <div class="card shadow-sm" data-aos="zoom-in">
-                        <div class="card-body">
-                            <div class="d-flex">
-                                <div class="flex-shrink-0">
-                                    <i class="fas fa-graduation-cap text-primary" style="font-size: 2rem;"></i>
-                                </div>
-                                <div class="flex-grow-1 ms-4">
-                                    <h5>DAE in CIT (Computer Information Technology)</h5>
-                                    <p class="mb-1"><strong>Institute:</strong> Government Polytechnic Institute</p>
-                                    <p class="mb-1"><strong>Duration:</strong> 2023 - Present (1st Year)</p>
-                                    <p class="mb-0"><strong>Status:</strong> Currently Enrolled</p>
-                                </div>
+                    <div class="about-card animate delay-1">
+                        <div class="d-flex">
+                            <div class="flex-shrink-0">
+                                <i class="fas fa-graduation-cap text-primary" style="font-size: 2.5rem;"></i>
+                            </div>
+                            <div class="flex-grow-1 ms-4">
+                                <h4>DAE in CIT (Computer Information Technology)</h4>
+                                <p class="mb-1"><strong>Institute:</strong> Government Polytechnic Institute</p>
+                                <p class="mb-1"><strong>Duration:</strong> 2023 - Present (1st Year)</p>
+                                <p class="mb-0"><strong>Status:</strong> Currently Enrolled</p>
                             </div>
                         </div>
                     </div>
                     
-                    <div class="card shadow-sm mt-4" data-aos="zoom-in" data-aos-delay="200">
-                        <div class="card-body">
-                            <div class="d-flex">
-                                <div class="flex-shrink-0">
-                                    <i class="fas fa-laptop-code text-primary" style="font-size: 2rem;"></i>
-                                </div>
-                                <div class="flex-grow-1 ms-4">
-                                    <h5>Self-Learning & Online Courses</h5>
-                                    <p class="mb-1"><strong>Web Development:</strong> HTML, CSS, JavaScript, PHP</p>
-                                    <p class="mb-1"><strong>Design:</strong> Photoshop, Illustrator</p>
-                                    <p class="mb-0"><strong>Platforms:</strong> YouTube, Udemy, FreeCodeCamp</p>
-                                </div>
+                    <div class="about-card mt-4 animate delay-2">
+                        <div class="d-flex">
+                            <div class="flex-shrink-0">
+                                <i class="fas fa-laptop-code text-primary" style="font-size: 2.5rem;"></i>
+                            </div>
+                            <div class="flex-grow-1 ms-4">
+                                <h4>Self-Learning & Online Courses</h4>
+                                <p class="mb-1"><strong>Web Development:</strong> HTML, CSS, JavaScript, PHP</p>
+                                <p class="mb-1"><strong>Design:</strong> Photoshop, Illustrator</p>
+                                <p class="mb-0"><strong>Platforms:</strong> YouTube, Udemy, FreeCodeCamp</p>
                             </div>
                         </div>
                     </div>
@@ -263,112 +849,126 @@
     </section>
 
     <!-- Projects Section -->
-    <section id="projects" class="py-5">
+    <section id="projects" class="section bg-light">
         <div class="container">
-            <h2 class="text-center section-title" data-aos="fade-up">Featured Projects</h2>
-            <div class="row">
-                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
-                    <div class="card project-card h-100">
-                        <img src="./img/6f24d67c-9e86-4456-aac3-3526efe15eb5-500x500.jpeg" class="card-img-top" alt="Digital Clock Project">
-                        <div class="card-body">
-                            <h5 class="card-title">Digital Clock</h5>
-                            <p class="card-text">A Digital Clock with functionality using JavaScript.</p>
-                            <div class="mb-3">
-                                <span class="badge bg-primary me-1">HTML</span>
-                                <span class="badge bg-primary me-1">CSS</span>
-                                <span class="badge bg-primary">JavaScript</span>
-                            </div>
-                            <a href="https://muhammadabbasalirizvi.github.io/digital-clock/" target="_blank" class="btn btn-outline-primary">View Project</a>
+            <div class="section-title animate">
+                <h2>Featured Projects</h2>
+            </div>
+            
+            <div class="projects-grid">
+                <!-- Project 1 -->
+                <div class="project-card animate delay-1">
+                    <img src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80" class="project-img" alt="Digital Clock Project">
+                    <div class="project-content">
+                        <h3 class="project-title">Digital Clock</h3>
+                        <p>A sleek digital clock with real-time functionality built using modern JavaScript techniques.</p>
+                        <div class="mb-3">
+                            <span class="tech-badge">HTML</span>
+                            <span class="tech-badge">CSS</span>
+                            <span class="tech-badge">JavaScript</span>
                         </div>
+                        <a href="https://muhammadabbasalirizvi.github.io/digital-clock/" target="_blank" class="btn btn-outline-primary">View Project</a>
                     </div>
                 </div>
-                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
-                    <div class="card project-card h-100">
-                        <img src="./img/flat-calculator-children-education-600nw-2141131775.webp" class="card-img-top" alt="Calculator Project">
-                        <div class="card-body">
-                            <h5 class="card-title">Calculator</h5>
-                            <p class="card-text">Animated Calculator with full functionality.</p>
-                            <div class="mb-3">
-                                <span class="badge bg-primary me-1">HTML</span>
-                                <span class="badge bg-primary me-1">CSS</span>
-                                <span class="badge bg-primary">JavaScript</span>
-                            </div>
-                            <a href="https://muhammadabbasalirizvi.github.io/calculate-repo/" target="_blank" class="btn btn-outline-primary">View Project</a>
+                
+                <!-- Project 2 -->
+                <div class="project-card animate delay-2">
+                    <img src="https://images.unsplash.com/photo-1587145820266-a5951ee6f620?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1160&q=80" class="project-img" alt="Calculator Project">
+                    <div class="project-content">
+                        <h3 class="project-title">Calculator</h3>
+                        <p>A responsive calculator with smooth animations and full mathematical functionality.</p>
+                        <div class="mb-3">
+                            <span class="tech-badge">HTML</span>
+                            <span class="tech-badge">CSS</span>
+                            <span class="tech-badge">JavaScript</span>
                         </div>
+                        <a href="https://muhammadabbasalirizvi.github.io/calculate-repo/" target="_blank" class="btn btn-outline-primary">View Project</a>
                     </div>
                 </div>
-                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="300">
-                    <div class="card project-card h-100">
-                        <img src="./img/images.png" class="card-img-top" alt="User Data Project">
-                        <div class="card-body">
-                            <h5 class="card-title">Data User Info</h5>
-                            <p class="card-text">Interactive user data display application.</p>
-                            <div class="mb-3">
-                                <span class="badge bg-primary me-1">JavaScript</span>
-                                <span class="badge bg-primary me-1">HTML</span>
-                                <span class="badge bg-primary">CSS</span>
-                            </div>
-                            <a href="https://muhammadabbasalirizvi.github.io/user-data/" target="_blank" class="btn btn-outline-primary">View Project</a>
+                
+                <!-- Project 3 -->
+                <div class="project-card animate delay-3">
+                    <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80" class="project-img" alt="User Data Project">
+                    <div class="project-content">
+                        <h3 class="project-title">User Data Dashboard</h3>
+                        <p>Interactive dashboard for displaying and managing user data with filtering capabilities.</p>
+                        <div class="mb-3">
+                            <span class="tech-badge">JavaScript</span>
+                            <span class="tech-badge">HTML</span>
+                            <span class="tech-badge">CSS</span>
                         </div>
+                        <a href="https://muhammadabbasalirizvi.github.io/user-data/" target="_blank" class="btn btn-outline-primary">View Project</a>
                     </div>
                 </div>
             </div>
-            <div class="text-center mt-4" data-aos="fade-up" data-aos-delay="400">
+            
+            <div class="text-center mt-5 animate delay-4">
                 <a href="https://github.com/MuhammadAbbasAliRizvi" target="_blank" class="btn btn-primary">View All Projects</a>
             </div>
         </div>
     </section>
 
     <!-- Contact Section -->
-    <section id="contact" class="py-5 bg-light">
+    <section id="contact" class="section">
         <div class="container">
-            <h2 class="text-center section-title" data-aos="fade-up">Get In Touch</h2>
+            <div class="section-title animate">
+                <h2>Get In Touch</h2>
+            </div>
+            
             <div class="row">
-                <div class="col-lg-6" data-aos="fade-right">
-                    <div class="contact-info mb-4">
+                <div class="col-lg-5 mb-5 mb-lg-0">
+                    <div class="contact-card animate delay-1">
                         <h4 class="mb-4">Contact Information</h4>
-                        <p><i class="fas fa-map-marker-alt"></i> Karachi, Pakistan</p>
-                        <p><i class="fas fa-envelope"></i> muhammadabbas0321299@gmail.com</p>
-                        <p><i class="fas fa-phone"></i> 0318-2322363</p>
-                        <p><i class="fas fa-link"></i> <a href="https://github.com/MuhammadAbbasAliRizvi" target="_blank">github.com/MuhammadAbbasAliRizvi</a></p>
-                        <div class="social-icons mt-4">
+                        <div class="contact-info">
+                            <p><i class="fas fa-map-marker-alt"></i> Karachi, Pakistan</p>
+                            <p><i class="fas fa-envelope"></i> muhammadabbas0321299@gmail.com</p>
+                            <p><i class="fas fa-phone"></i> 0318-2322363</p>
+                            <p><i class="fas fa-link"></i> <a href="https://github.com/MuhammadAbbasAliRizvi" target="_blank">github.com/MuhammadAbbasAliRizvi</a></p>
+                        </div>
+                        <div class="social-icons mt-5">
                             <a href="https://github.com/MuhammadAbbasAliRizvi" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
-                            <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                            <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
                             <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
                             <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-6" data-aos="fade-left" data-aos-delay="200">
-                    <form id="contactForm">
-                        <div class="mb-3">
-                            <input type="text" class="form-control" placeholder="Your Name" required>
-                        </div>
-                        <div class="mb-3">
-                            <input type="email" class="form-control" placeholder="Your Email" required>
-                        </div>
-                        <div class="mb-3">
+                <div class="col-lg-7">
+                    <div class="contact-card animate delay-2">
+                        <form id="contactForm">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <input type="text" class="form-control" placeholder="Your Name" required>
+                                </div>
+                                <div class="col-md-6">
+                                    <input type="email" class="form-control" placeholder="Your Email" required>
+                                </div>
+                            </div>
                             <input type="text" class="form-control" placeholder="Subject">
-                        </div>
-                        <div class="mb-3">
                             <textarea class="form-control" rows="5" placeholder="Your Message" required></textarea>
-                        </div>
-                        <button type="submit" class="btn btn-primary">Send Message</button>
-                    </form>
+                            <button type="submit" class="btn btn-primary">Send Message</button>
+                        </form>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Footer -->
-    <footer class="text-center py-4">
+    <footer>
         <div class="container">
-            <p>&copy; <span id="currentYear"></span> Muhammad Abbas. All rights reserved.</p>
-            <div class="social-icons">
-                <a href="https://github.com/MuhammadAbbasAliRizvi" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
-                <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
-                <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
-                <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+            <div class="footer-content">
+                <h3 class="mb-4">Muhammad Abbas</h3>
+                <p>Web Developer & Designer</p>
+                <div class="social-icons mt-4">
+                    <a href="https://github.com/MuhammadAbbasAliRizvi" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                    <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                    <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+            <div class="text-center py-3">
+                <p>&copy; <span id="currentYear"></span> Muhammad Abbas. All rights reserved.</p>
             </div>
         </div>
     </footer>
@@ -378,29 +978,47 @@
 
     <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-    <!-- AOS JS -->
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <!-- Custom JS -->
     <script>
-        // Initialize AOS
-        AOS.init({
-            duration: 800,
-            easing: 'ease-in-out',
-            once: true,
-            mirror: false
+        // Theme Toggle
+        const themeToggle = document.getElementById('themeToggle');
+        const themeIcon = themeToggle.querySelector('i');
+        
+        // Check for saved theme preference
+        const savedTheme = localStorage.getItem('theme');
+        if (savedTheme === 'dark') {
+            document.body.classList.add('dark-theme');
+            themeIcon.classList.replace('fa-moon', 'fa-sun');
+        }
+
+        themeToggle.addEventListener('click', () => {
+            document.body.classList.toggle('dark-theme');
+            
+            // Toggle icon
+            if (document.body.classList.contains('dark-theme')) {
+                themeIcon.classList.replace('fa-moon', 'fa-sun');
+                localStorage.setItem('theme', 'dark');
+            } else {
+                themeIcon.classList.replace('fa-sun', 'fa-moon');
+                localStorage.setItem('theme', 'light');
+            }
         });
 
-        // Smooth scrolling for navigation links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function(e) {
-                e.preventDefault();
-                document.querySelector(this.getAttribute('href')).scrollIntoView({
-                    behavior: 'smooth'
-                });
-            });
+        // Circular Progress Animation
+        document.querySelectorAll('.progress').forEach(progress => {
+            const value = progress.getAttribute('data-value');
+            const circumference = 2 * Math.PI * 70;
+            const offset = circumference - (value / 100) * circumference;
+            progress.style.strokeDashoffset = offset;
         });
 
-        // Update copyright year automatically
+        // Form submission
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Thank you for your message! I will get back to you soon.');
+            this.reset();
+        });
+
+        // Update copyright year
         document.getElementById('currentYear').textContent = new Date().getFullYear();
 
         // Back to top button
@@ -413,12 +1031,56 @@
             }
         });
 
-        // Form submission (placeholder functionality)
-        document.getElementById('contactForm').addEventListener('submit', function(e) {
-            e.preventDefault();
-            alert('Thank you for your message! I will get back to you soon.');
-            this.reset();
+        // Navbar scroll effect
+        window.addEventListener('scroll', function() {
+            const navbar = document.querySelector('.navbar');
+            if (window.scrollY > 50) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
         });
+
+        // Project card tilt effect
+        document.querySelectorAll('.project-card').forEach(card => {
+            card.addEventListener('mousemove', (e) => {
+                const xAxis = (window.innerWidth / 2 - e.pageX) / 15;
+                const yAxis = (window.innerHeight / 2 - e.pageY) / 15;
+                card.style.transform = `rotateY(${xAxis}deg) rotateX(${yAxis}deg) translateY(-15px)`;
+            });
+
+            card.addEventListener('mouseenter', () => {
+                card.style.transition = 'transform 0.1s ease';
+            });
+
+            card.addEventListener('mouseleave', () => {
+                card.style.transform = 'translateY(-15px)';
+                card.style.transition = 'transform 0.5s ease';
+                setTimeout(() => {
+                    card.style.transform = '';
+                }, 500);
+            });
+        });
+
+        // Animate elements on scroll
+        function animateOnScroll() {
+            const elements = document.querySelectorAll('.animate');
+            elements.forEach(el => {
+                const elementTop = el.getBoundingClientRect().top;
+                const windowHeight = window.innerHeight;
+                
+                if (elementTop < windowHeight - 100) {
+                    el.style.opacity = 1;
+                    el.style.visibility = 'visible';
+                }
+            });
+        }
+
+        // Initial check
+        animateOnScroll();
+        
+        // Check on scroll
+        window.addEventListener('scroll', animateOnScroll);
     </script>
 </body>
 </html>
